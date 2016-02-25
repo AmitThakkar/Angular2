@@ -6,18 +6,18 @@ import {Todo} from './todo';
 @Component({
     selector: 'todo-list',
     styles: [`
-    .done-true {
-      text-decoration: line-through;
-      color: grey;
-    }`
+        .done-true {
+          text-decoration: line-through;
+          color: grey;
+        }`
     ],
     template: `
-    <ul class="unstyled">
-      <li *ngFor="#todo of todos">
-        <input type="checkbox" [(ngModel)]="todo.done">
-        <span class="done-{{todo.done}}">{{todo.text}}</span>
-      </li>
-    </ul>`
+        <ul class="unstyled">
+          <li *ngFor="#todo of todos">
+            <input type="checkbox" [(ngModel)]="todo.done">
+            <span class="done-{{todo.done}}">{{todo.text}}</span>
+          </li>
+        </ul>`
 })
 export class TodoList {
     @Input() todos:Todo[];
