@@ -83,6 +83,14 @@ export class HelloWorld {
 }
 ```
 
+In `hello_world.ts` we are requiring **Component** package form `angular2/core` so **Angular2** will be able to recognize
+that it is a component.
+
+With `@Component` decorator, we are providing configuration for component. i.e. selector and templateUrl.
+
+And in last, we are exporting **Type-Script** class. So this component will be available into other files and module
+where it will be import.
+
 **hello_world.html**
 ```HTML
 <label>Name:</label>
