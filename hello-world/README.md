@@ -46,12 +46,21 @@ help of `System.config` method, we are loading our main file `app/main.ts`.
 
 > We are using `Type-Script` so in `System.config` transpiler is typescript, and defaultExtension is `ts`.
 
+Element `<hello-world>` tag will display **Loading** till `HelloWorld` component does not loaded successfully.
+
 **main.ts**
 ```JavaScript
 import {bootstrap}  from 'angular2/platform/browser';
 import {HelloWorld} from './hello_world';
 bootstrap(HelloWorld);
 ```
+
+In `main.ts`, we are requiring **bootstrap** package from `angular2/platform/browser` and **HelloWorld** package from
+`./hello_world`.
+
+> **bootstrap** package bootstrap the **Angular2** app with provided package.
+
+And on third line, we are bootstrapping **HelloWorld** package, so this package will be available into `index.html`.
 
 **hello_world.ts**
 ```JavaScript
