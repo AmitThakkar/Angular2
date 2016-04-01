@@ -41,6 +41,11 @@ So lets your first `Hello World` application with **Angular2**.
 </html>
 ```
 
+In `index.html`, we are loading all required `.js` files e.g. `Angular2`, `TypeScript`, `System.js` etc. And with the
+help of `System.config` method, we are loading our main file `app/main.ts`.
+
+> We are using `Type-Script` so in `System.config` transpiler is typescript, and defaultExtension is `ts`.
+
 **main.ts**
 ```JavaScript
 import {bootstrap}  from 'angular2/platform/browser';
