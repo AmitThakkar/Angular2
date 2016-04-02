@@ -1,0 +1,12 @@
+<h1>1. 1-way Data binding.</h1>
+<h4>1. View to Component Data binding.</h4>
+    <input type="text" ()="" placeholder="Enter a name here">
+<h4>2. Component to View Data binding.</h4>
+    My Name is {{name}}
+    <input type="text" []="name" placeholder="Enter a name here">
+<hr/>
+<h1>2. 2-way Data binding.</h1>
+
+<label>Name:</label>
+<input type="text" [(ngModel)]="name" placeholder="Enter a name here">
+<h1 [hidden]="!name">Hello {{name}}!</h1>
