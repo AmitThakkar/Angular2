@@ -1,11 +1,11 @@
 Angular2 Components
 -------------------
 
-**Angular2** is on **BETA** now. So its great time to explore **Angular2** because now **Angular2** team is mostly
-working to new feature and bug fixes so there will be no fundamentals/major changes will happen into **Angular2** 
-Application.
+**Angular2** is on **BETA** now. So its great time to explore **Angular2** as **Angular2** team is mostly
+working on new features and bug fixes so no fundamental/major changes will happen in **Angular2** 
+application.
 
-So lets your first `Hello World` application with **Angular2**.
+So lets write our first `Hello World` application with **Angular2**.
 
 **index.html**
 ```HTML
@@ -42,11 +42,11 @@ So lets your first `Hello World` application with **Angular2**.
 ```
 
 In `index.html`, we are loading all required `.js` files e.g. `Angular2`, `TypeScript`, `System.js` etc. And with the
-help of `System.config` method, we are loading our main file `app/main.ts`.
+help of `System.config` method, we are loading our main file `main.ts`.
 
-> We are using `Type-Script` so in `System.config` transpiler is typescript, and defaultExtension is `ts`.
+> We are using `Type-Script` therefore in `System.config` transpiler is `typescript`, and defaultExtension is `ts`.
 
-Element `<hello-world>` tag will display **Loading** till `HelloWorld` component does not loaded successfully.
+Element `<hello-world>` tag will display **Loading...** till `HelloWorld` component does not gets loaded successfully.
 
 **main.ts**
 ```JavaScript
@@ -60,25 +60,36 @@ In `main.ts`, we are requiring **bootstrap** package from `angular2/platform/bro
 
 > **bootstrap** package bootstrap the **Angular2** app with provided package.
 
-And on third line, we are bootstrapping **HelloWorld** package, so this package will be available into `index.html`.
+And on third line, we are bootstrapping **HelloWorld** package, so this package will be available in `index.html`.
 
 **hello_world.ts**
 ```JavaScript
-// Require Component package from `angular2/core` package, so Angular can recognize that it is a component
+
+// Require Component package from `angular2/core` package, so Angular can recognize that it is a component.
+
 import {Component} from 'angular2/core';
-// This is decorator, and we define configurations into this for component.
+
+// Below is the decorator, and we define configurations in the decorator for component.
+
 @Component({
-    // Defining selector for the component so we can tag this in .html file to attache the component.
+
+    // Defining selector for the component so that we can tag component/directive in .html file to the attached component.
+    
     selector: 'hello-world',
-    // Providing the .html for the component. You can provide HTML directly with property template as we do into Angular1.X
+    
+    // Providing .html for the component. You can provide HTML directly with property template as we do in Angular1.X
+    
     templateUrl: 'app/hello_world.html'
 })
+
 /*
- * This is TypeScript Class, which will be compile into Old JavaScript Class.
- * And we are exporting it so It will be available into other files and modules.
- * */
+ * Following is the TypeScript Class, which will be compiled into old JavaScript Class.
+ * And we are exporting it so it will be available in other files and modules.
+ * 
+ */
+ 
 export class HelloWorld {
-    // Declaring the variable for binding with initial value
+    // Declaring the variable to bind with initial value
     name:string = '';
 }
 ```
@@ -88,8 +99,8 @@ that it is a component.
 
 With `@Component` decorator, we are providing configuration for component. i.e. selector and templateUrl.
 
-And in last, we are exporting **Type-Script** class. So this component will be available into other files and module
-where it will be import and in HelloWorld class, we are defining a property **name**.
+And in last, we are exporting **Type-Script** class. So this component will be available in other files and modules
+where it will be imported and we are defining a property **name** in HelloWorld class.
 
 **hello_world.html**
 ```HTML
@@ -104,4 +115,4 @@ where it will be import and in HelloWorld class, we are defining a property **na
 In `hello_world.html` we are doing 2-way-data binding for name property on input. And showing `Hello {{name}}` if 
 name is present.
 
-> For 2-way-binding, we are using [(ngModel)] and for hiding element we are using [hidden] attributes.
+> For 2-way-binding, we are using [(ngModel)] and for hiding element we are using [hidden] attribute.
