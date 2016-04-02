@@ -16,5 +16,5 @@ import {Component} from 'angular2/core';
  * */
 export class HelloWorld {
     // Declaring the variable for binding with initial value
-    yourName:string = '';
+    name:string = '';
 }
