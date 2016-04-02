@@ -79,7 +79,7 @@ import {Component} from 'angular2/core';
  * */
 export class HelloWorld {
     // Declaring the variable for binding with initial value
-    yourName:string = '';
+    name:string = '';
 }
 ```
 
@@ -89,14 +89,19 @@ that it is a component.
 With `@Component` decorator, we are providing configuration for component. i.e. selector and templateUrl.
 
 And in last, we are exporting **Type-Script** class. So this component will be available into other files and module
-where it will be import.
+where it will be import and in HelloWorld class, we are defining a property **name**.
 
 **hello_world.html**
 ```HTML
 <label>Name:</label>
-<!-- data-bind to the input element; store value in yourName -->
-<input type="text" [(ngModel)]="yourName" placeholder="Enter a name here">
+<!-- data-bind to the input element; store value in name -->
+<input type="text" [(ngModel)]="name" placeholder="Enter a name here">
 <hr>
-<!-- conditionally display `yourName` -->
-<h1 [hidden]="!yourName">Hello {{yourName}}!</h1>
+<!-- conditionally display `name` -->
+<h1 [hidden]="!name">Hello {{name}}!</h1>
 ```
+
+In `hello_world.html` we are doing 2-way-data binding for name property on input. And showing `Hello {{name}}` if 
+name is present.
+
+> For 2-way-binding, we are using [(ngModel)] and for hiding element we are using [hidden] attributes.
