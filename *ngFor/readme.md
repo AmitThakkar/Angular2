@@ -4,7 +4,7 @@ This repo contains a small snippet that compares **ng-repeat** of **Angular 1.x*
 
 Well, to start of with - **ngRepeat** directive will NOT be available in **Angular 2**. It has been replaced by a new directive i.e. **\*ngFor**.
 
-`Here is a recap:`
+> Here is a recap:
 
 * **ngRepeat** directive instantiated template once per item for a collection.
 * Each template instance had its own scope.
@@ -35,23 +35,25 @@ Now, let's move to main agenda of this discussion i.e. **\*ngFor**. Let's start.
 
 * The major difference between **ng-repeat** and **\*ngFor** is its syntax. Here is a small snipped
 
-```
+```HTML
 <ul>
     <li *ngFor="#item of items">{{item}}</li>
 </ul
-```>
+```
 
 * **\*ngFor** is based on **JavaScript's** ``for of`` loop hence it can be used to iterate over **Arrays**, **Map**, **Set** etc. However it cannot be used to iterate over object properties straightaway.
 One of the possible work arounds could be extracting the keys from an object and then iterating it over the keys.
 
-* Also other important difference is use of ``#refs``. ``#refs`` would be widely used in **Angular2**. In this case ``#item`` contain the value of each item. ``#refs`` hold the reference of the element in cases such as:
+* Also other important difference is use of `#refs`. `#refs` would be widely used in **Angular2**. In this case `#item` contain the value of each item. `#refs` hold the reference of the element in cases such as:
 
-``<input type="text" #inputText>``
+```HTML
+<input type="text" #inputText>
+```
 
 For the above case:
 
-``inputText`` would contain the reference of the element i.e. ``<input type="text">``
-``inputText.value`` would contain the actual value entered in the input box.
+`inputText` would contain the reference of the element i.e. `<input type="text">`
+`inputText.value` would contain the actual value entered in the input box.
 
 * You would also be wondering what is the asterisk (*) sign for. Asterisk (*) sign is nothing but a syntactic sugar.
 
