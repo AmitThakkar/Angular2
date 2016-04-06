@@ -58,9 +58,8 @@ For the above case:
 
 * Like **ng-repeat**, each instance element receives properties like **odd**, **even** , **last**, **index**. I have used these properties in the small example below:
 
-```
+```TypeScript
 import {Component} from 'angular2/core';
-
 @Component({
     selector: 'my-app',
     template: `<h1>{{title}}</h1>
@@ -83,7 +82,6 @@ import {Component} from 'angular2/core';
         </div>
     `
 })
-
 export class AppComponent {
     toDo = {};
     title = 'My To Do List';
@@ -102,7 +100,7 @@ export class AppComponent {
 
 In order to run the demo given in this repo, clone this repository. Go inside the repo and write ``npm install``. This would bring required node modules for you.
 
- Now, run **npm start** command and your demo should be working!
+Now, run **npm start** command and your demo should be working!
 
 
 
