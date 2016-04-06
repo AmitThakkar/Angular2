@@ -1,9 +1,8 @@
-***ngFor in Angular2**
-===========================
+#*ngFor in Angular2
 
-This repo contains a small snippet that compares **ng-repeat** of **Angular 1.x** with ***ngFor** of **Angular 2**.
+This repo contains a small snippet that compares **ng-repeat** of **Angular 1.x** with **\*ngFor** of **Angular 2**.
 
-Well, to start of with - **ngRepeat** directive will NOT be available in **Angular 2**. It has been replaced by a new directive i.e. ***ngFor**.
+Well, to start of with - **ngRepeat** directive will NOT be available in **Angular 2**. It has been replaced by a new directive i.e. **\*ngFor**.
 
 `Here is a recap:`
 
@@ -32,9 +31,9 @@ $scope.personDetails = {name:'Namita',age:'25'}
 <div ng-repeat=" (key, value) in personDetails">{{key}} : {{value}}</div>
 ```
 
-Now, let's move to main agenda of this discussion i.e. ***ngFor**. Let's start.
+Now, let's move to main agenda of this discussion i.e. **\*ngFor**. Let's start.
 
-* The major difference between **ng-repeat** and **ngFor** is its syntax. Here is a small snipped
+* The major difference between **ng-repeat** and **\*ngFor** is its syntax. Here is a small snipped
 
 ```
 <ul>
@@ -42,7 +41,7 @@ Now, let's move to main agenda of this discussion i.e. ***ngFor**. Let's start.
 </ul
 ```>
 
-* ***ngFor** is based on **JavaScript's** ``for of`` loop hence it can be used to iterate over **Arrays**, **Map**, **Set** etc. However it cannot be used to iterate over object properties straightaway.
+* **\*ngFor** is based on **JavaScript's** ``for of`` loop hence it can be used to iterate over **Arrays**, **Map**, **Set** etc. However it cannot be used to iterate over object properties straightaway.
 One of the possible work arounds could be extracting the keys from an object and then iterating it over the keys.
 
 * Also other important difference is use of ``#refs``. ``#refs`` would be widely used in **Angular2**. In this case ``#item`` contain the value of each item. ``#refs`` hold the reference of the element in cases such as:
