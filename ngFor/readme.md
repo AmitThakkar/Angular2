@@ -60,36 +60,46 @@ For the above case:
 * Like **ng-repeat**, each instance element receives properties like **odd**, **even** , **last**, **index**. I have used these properties in the small example below:
 
 ```TypeScript
+/**
+ * Created by Namita Malik on 4/5/16.
+ */
+
 import {Component} from 'angular2/core';
+
 @Component({
     selector: 'my-app',
-    template: `<h1>{{title}}</h1>
+    template: `
+    <h1>{{title}}</h1>
     <h2>Enter To Do Items Below:</h2>
-        <input [(ngModel)]="toDo.item" (keyup.enter) = "onKey(toDo.item)">
-        <div *ngIf="toDoList.length>0">
+    <input (keyup.enter)="onKey(todo)" #todo>
+    <div *ngIf="toDoList.length>0">
         <p>Your To Do Items:</p>
-        </div>
-        <div style="padding: 10px 0 0 0">
-        <table width="300" border="1" cellpadding="5" style="text-align: center">
+    </div>
+    <div style="padding: 10px 0 0 0">
+    <table width="300" border="1" cellpadding="5" style="text-align: center">
         <tr>
-        <th>Index</th>
-        <th>To Do Item</th>
+            <th>Index</th>
+            <th>To Do Item</th>
         </tr>
-        <tr *ngFor="#toDo of toDoList, #i=index, #last = last, #odd = odd, #even = even"  [ngClass]="{'odd-color':odd,'even-color':even, 'last-color' : last }">
-        <td>{{i}}</td>
-        <td>{{toDo}}</td>
+        <tr *ngFor="#toDo of toDoList, #i=index, #last=last, #odd=odd, #even=even"  [ngClass]="{'odd-color':odd, 'even-color':even, 'last-color' : last }">
+            <td>{{i}}</td>
+            <td>{{toDo}}</td>
         </tr>
-        </table>
-        </div>
+    </table>
+    </div>
     `
 })
+
 export class AppComponent {
-    toDo = {};
+    toDo = {
+        item: ''
+    };
     title = 'My To Do List';
     toDoList = [];
-    onKey(value){
-        this.toDoList.push(value);
-        this.toDo.item = '';
+
+    onKey(todo) {
+        this.toDoList.push(todo.value);
+        todo.value = '';
     }
 }
 ```
@@ -101,7 +111,7 @@ export class AppComponent {
 
 In order to run the demo given in this repo, clone this repository. Go inside the repo and write ``npm install``. This would bring required node modules for you.
 
-Now, run **npm start** command and your demo should be working!
+Now, run open index.html in your favourite browser!
 
 
 
