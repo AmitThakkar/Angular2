@@ -1,5 +1,5 @@
 /**
- * Created by namita on 4/5/16.
+ * Created by Namita Malik on 4/5/16.
  */
 
 import {Component} from 'angular2/core';
@@ -29,7 +29,9 @@ import {Component} from 'angular2/core';
 })
 
 export class AppComponent {
-    toDo = {};
+    toDo = {
+        item: ''
+    };
     title = 'My To Do List';
     toDoList = [];
 
