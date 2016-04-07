@@ -46,7 +46,7 @@ Now, let's move to main agenda of this discussion i.e. **\*ngFor**. Let's start.
 
 * Also other important difference is use of `#refs`. `#refs` would be widely used in **Angular2**. In this case `#item` contain the value of each item. `#refs` hold the reference of the element in cases such as:
 
-> `NgRepeat` created inherited child scope for each element of collection, while `\*ngFor` creates local variable in the that block.
+> `NgRepeat` created inherited child scope for each element of collection, while `*ngFor` creates local variable in the that block.
 
 ```HTML
 <input type="text" #inputText>
