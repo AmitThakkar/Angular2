@@ -55,7 +55,7 @@ For the above case:
 `inputText` would contain the reference of the element i.e. `<input type="text">`
 `inputText.value` would contain the actual value entered in the input box.
 
-* You would also be wondering what is the asterisk (*) sign for. Asterisk (*) sign is nothing but a syntactic sugar.
+* You would also be wondering what is the asterisk (\*) sign for. Asterisk (\*) sign is nothing but a syntactic sugar.
 
 * Like **ng-repeat**, each instance element receives properties like **odd**, **even** , **last**, **index**. I have used these properties in the small example below:
 
