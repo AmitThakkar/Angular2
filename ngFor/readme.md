@@ -105,11 +105,13 @@ export class AppComponent {
 }
 ```
 
+>Note: It is not advisable to create grid structure using table tags but to keep the things simple I have used it here.
+
 * As demonstrated above we have used index property to get the index of each item in the collection and assigned it to local variable `#i`. Similarly we have used other properties and assigned them to local variables in order to apply the classes conditionally on the table rows.
 
 For example: `odd-color` class is applied on the row when item is odd. `odd` property returns a `true` or `false` on the basis of item index which is then assigned to local variable `#odd`.
     
-* **Angular2** allow duplicate values into **\*ngFor** so we don't need **trackBy** any more and for unique value we use **Set**.
+* **Angular2** allows duplicate values in **\*ngFor** so we don't need **trackBy** any more and for unique value we use **Set**.
 
 In order to run the demo given in this repo, clone this repository. Go inside the repo and write `npm install`. This would bring required node modules for you.
 
