@@ -9,7 +9,7 @@ import {Component} from 'angular2/core';
     template: `
     <h1>{{title}}</h1>
     <h2>Enter To Do Items Below:</h2>
-    <input [(ngModel)]="toDo.item" (keyup.enter)="onKey(toDo.item)">
+    <input (keyup.enter)="onKey(todo)" #todo>
     <div *ngIf="toDoList.length>0">
         <p>Your To Do Items:</p>
     </div>
@@ -35,8 +35,8 @@ export class AppComponent {
     title = 'My To Do List';
     toDoList = [];
 
-    onKey(value) {
-        this.toDoList.push(value);
-        this.toDo.item = '';
+    onKey(todo) {
+        this.toDoList.push(todo.value);
+        todo.value = '';
     }
 }
