@@ -8,7 +8,7 @@ Well, to start of with - **ngRepeat** directive will NOT be available in **Angul
 
 * **ngRepeat** directive instantiated template once per item for a collection.
 * Each template instance had its own scope.
-* Special properties were available for each template instance : *$index*, *$first*, *$middle*, *$last*, *$even*, *$odd*.
+* Special properties were available for each template instance : **$index**, **$first**, **$middle**, **$last**, **$even**, **$odd**.
 * **ngRepeat** by default did not allow duplicate elements. A tracking function was responsible for this task.
 * In order to add duplicate items, **track by** expression was used.
 * Here is a small snippet:
@@ -18,7 +18,7 @@ $scope.items = ['eat','sleep','work','eat']
 ```
 
 ```HTML
-<div ng-repeat="item in items track by $index">{{item}}</div>
+<div ng-repeat="item in items track by $index">{{$index+1}} : {{item}}</div>
 ```
 
 * Object properties could also be iterated over. Here is a snippet for that:
@@ -28,7 +28,7 @@ $scope.personDetails = {name:'Namita',age:'25'}
 ```
 
 ```HTML
-<div ng-repeat=" (key, value) in personDetails">{{key}} : {{value}}</div>
+<div ng-repeat="(key, value) in personDetails">{{key}} : {{value}}</div>
 ```
 
 Now, let's move to main agenda of this discussion i.e. **\*ngFor**. Let's start.
@@ -41,8 +41,8 @@ Now, let's move to main agenda of this discussion i.e. **\*ngFor**. Let's start.
 </ul
 ```
 
-* **\*ngFor** is based on **JavaScript's** ``for of`` loop hence it can be used to iterate over **Arrays**, **Map**, **Set** etc. However it cannot be used to iterate over object properties straightaway.
-One of the possible work arounds could be extracting the keys from an object and then iterating it over the keys.
+* **\*ngFor** is based on **JavaScript's** `for of` loop hence it can be used to iterate over **Arrays**, **Map**, **Set**. However it cannot be used to iterate over object properties straightaway.
+>One of the possible work arounds could be extracting the keys from an object and then iterating it over the keys.
 
 * Also other important difference is use of `#refs`. `#refs` would be widely used in **Angular2**. In this case `#item` contain the value of each item. `#refs` hold the reference of the element in cases such as:
 
@@ -107,11 +107,11 @@ export class AppComponent {
 * As demonstrated above we have used index property to get the index of each item in the collection and assigned it to local variable ``#i``. Similarly we have used other properties and assigned them to local variables in order to apply the classes conditionally on the table rows.
   For example: ``odd-color`` class is applied on the row when item is odd. ``odd`` property returns a ``true`` or ``false`` on the basis of item index which is then assigned to local variable ``#odd``.
     
-* As of now, **Angular 2** docs do not talk anything about track by. Hence it is out of scope for this discussion.
+* **Angular2** allow duplicate values into **\*ngFor** so we don't need **trackBy** any more and for unique value we use **Set**.
 
 In order to run the demo given in this repo, clone this repository. Go inside the repo and write ``npm install``. This would bring required node modules for you.
 
-Now, run open index.html in your favourite browser!
+Now, run open **index.html** in your favourite browser!
 
 
 
