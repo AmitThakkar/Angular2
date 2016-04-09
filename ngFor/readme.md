@@ -2,14 +2,14 @@
 
 This repo contains a small snippet that compares **ng-repeat** of **Angular 1.x** with **\*ngFor** of **Angular 2**.
 
-Well, to start of with - **ngRepeat** directive will NOT be available in **Angular 2**. It has been replaced by a new directive i.e. **\*ngFor**.
+Well, to start of with - **ng-repeat** directive will NOT be available in **Angular 2**. It has been replaced by a new directive i.e. **\*ngFor**.
 
 > Here is a recap:
 
-* **ngRepeat** directive instantiated template once per item for a collection.
+* **ng-repeat** directive instantiated template once per item for a collection.
 * Each template instance had its own scope.
 * Special properties were available for each template instance : **$index**, **$first**, **$middle**, **$last**, **$even**, **$odd**.
-* **ngRepeat** by default did not allow duplicate elements. A tracking function was responsible for this task.
+* **ng-repeat** by default did not allow duplicate elements. A tracking function was responsible for this task.
 * In order to add duplicate items, **track by** expression was used.
 * Here is a small snippet:
 
@@ -46,7 +46,7 @@ Now, let's move to main agenda of this discussion i.e. **\*ngFor**. Let's start.
 
 * Also other important difference is use of `#refs`. `#refs` would be widely used in **Angular2**. In this case `#item` contain the value of each item. `#refs` hold the reference of the element in cases such as:
 
-> `NgRepeat` created inherited child scope for each element of collection, while `*ngFor` creates local variable in the that block.
+> `ng-repeat` created inherited child scope for each element of collection, while `*ngFor` creates local variable in the that block.
 
 ```HTML
 <input type="text" #inputText>
@@ -105,18 +105,14 @@ export class AppComponent {
 }
 ```
 
+>Note: It is not advisable to create grid structure using table tags but to keep the things simple I have used it here.
+
 * As demonstrated above we have used index property to get the index of each item in the collection and assigned it to local variable `#i`. Similarly we have used other properties and assigned them to local variables in order to apply the classes conditionally on the table rows.
 
 For example: `odd-color` class is applied on the row when item is odd. `odd` property returns a `true` or `false` on the basis of item index which is then assigned to local variable `#odd`.
     
-* **Angular2** allow duplicate values into **\*ngFor** so we don't need **trackBy** any more and for unique value we use **Set**.
+* **Angular2** allows duplicate values in **\*ngFor** so we don't need **trackBy** any more and for unique value we use **Set**.
 
 In order to run the demo given in this repo, clone this repository. Go inside the repo and write `npm install`. This would bring required node modules for you.
 
 Now, run open **index.html** in your favourite browser!
-
-
-
-
-
-
